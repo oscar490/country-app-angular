@@ -1,5 +1,5 @@
 
-<section class="mt-5">
+<section class="mt-5 mb-5">
   <table class="table table-md mt-2 w-full">
     <thead>
       <tr>
@@ -22,7 +22,11 @@
           </td>
           <td>{{ country.name }}</td>
           <td>{{ country.capital }}</td>
-          <td>{{ country.population }}</td>
+          <td>
+            <span class="badge badge-secondary">
+              {{ country.population | number }}
+            </span>
+          </td>
           <td>
             <a class="link-primary cursor-pointer">Más información</a>
           </td>
