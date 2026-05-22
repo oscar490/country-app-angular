@@ -1,3 +1,11 @@
-<country-search-input [placeholderSearch]="'Buscar por país'" />
+
+<country-search-input [placeholderSearch]="'Buscar por país'" (value)="onSearchCountry($event)" />
+
+<country-list
+  [countries]="countries() ?? []"
+  [errorMessage]="isError()"
+  [isEmpty]="countries().length == 0"
+  [isLoading]="isLoading()"
+/>
 
 

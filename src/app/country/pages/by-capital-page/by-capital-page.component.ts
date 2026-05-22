@@ -1,3 +1,4 @@
+import { AlertErrorComponent } from './../../shared/components/alert/alert-error.component';
 import { Component, inject, signal } from "@angular/core";
 import { CountrySearchInput } from "../../shared/components/country-search-input/country-search-input";
 import { CountryList } from "../../shared/components/country-list/country-list";
@@ -9,7 +10,7 @@ import { HttpErrorResponse, httpResource } from "@angular/common/http";
 @Component({
   selector: 'by-capital',
   templateUrl: './by-capital-page.component.html',
-  imports: [CountrySearchInput, CountryList]
+  imports: [CountrySearchInput, CountryList, AlertErrorComponent]
 })
 
 export class ByCapitalPageComponent {
@@ -27,6 +28,7 @@ export class ByCapitalPageComponent {
       return;
     }
 
+    this.countries.set([]);
     this.isLoading.set(true);
     this.isError.set(null);
 

@@ -1,7 +1,8 @@
+import { DecimalPipe } from '@angular/common';
 import { Component, input } from "@angular/core";
 import { RESTCountry } from "../../../interfaces/rest-countries.interface";
 import { Country } from "../../../interfaces/country.interface";
-import { DecimalPipe } from "@angular/common";
+
 
 @Component({
   selector: 'country-list',
@@ -12,5 +13,9 @@ import { DecimalPipe } from "@angular/common";
 export class CountryList {
 
   countries = input.required<Country[]>();
+
+  errorMessage = input<string | null>()
+  isLoading = input<boolean>(false);
+  isEmpty = input<boolean>(false);
 
 }
