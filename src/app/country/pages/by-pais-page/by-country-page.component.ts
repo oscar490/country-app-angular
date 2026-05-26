@@ -16,9 +16,7 @@ export class ByCountryPageComponent {
   countryService = inject(CountryService);
 
   countries = signal<Country[]>([]);
-
   isError = signal<string | null>(null);
-
   isLoading = signal<boolean>(false);
 
   onSearchCountry(query: string) {

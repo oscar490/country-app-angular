@@ -1,3 +1,12 @@
 
+@if (isError()) {
+  <not-found />
+}
 
-<h2>{{ code() }}</h2>
+@if (isLoading()) {
+  <h1 class="text-3xl">Cargando...</h1>
+}
+
+@if (country()) {
+  <country-information [country]="country()" />
+}
